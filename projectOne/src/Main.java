@@ -1,3 +1,4 @@
+import com.brijesh.executor.CustomerScheduledExecutorService;
 import com.brijesh.executor.FraudExecutorService;
 import com.brijesh.executor.Invoker;
 import com.brijesh.tasks.Task;
@@ -20,7 +21,10 @@ void main() {
    // thirdwayrunning();
 
     // 4. fourth way of running
-    fourthwayrunning();
+    //fourthwayrunning();
+
+    //5. fifth way of running
+    fifthwayrunning();
 
 }
 
@@ -66,3 +70,10 @@ public void fourthwayrunning(){
     fraudExecutorService.execute();
     fraudExecutorService.shutdown();
    }
+
+public void fifthwayrunning(){
+    CustomerScheduledExecutorService scService = new CustomerScheduledExecutorService();
+    scService.executeOne();
+    scService.executeTwo();
+    scService.shutdown();
+}
